@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <html lang="{{ site.lang | default: "en-US" }}">
+
+
+    <!-- ****** Header ****** -->
   <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,9 +13,17 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
     <![endif]-->
     {% include head-custom.html %}
+
+    <!-- I added this -->
+    <a href={{ site.baseurl }}"/about/">Link to About Page</a> 
+
   </head>
+
+  <!-- ******Body****** -->
   <body>
     <div class="wrapper">
+
+      <!-- ******Header (left pane) variables are in _config.yml ****** -->
       <header>
         <h1><a href="{{ "/" | absolute_url }}">{{ site.title | default: site.github.repository_name }}</a></h1>
 
@@ -37,19 +48,35 @@
           <li><a href="{{ site.github.repository_url }}">View On <strong>GitHub</strong></a></li>
         </ul>
         {% endif %}
+
+ 
+        <!-- I added this as a test. -->
+        {% if site.github_username %}
+        <p>My GitHub user name: {{ site.github_username}}</p>    
+        {% endif %}   
+
       </header>
+      
+      
+      <!-- ******Right pane (content) comes from index.markdown****** -->
       <section>
-
       {{ content }}
-
       </section>
+
+
+
+      <!-- ******Footer****** -->
       <footer>
         {% if site.github.is_project_page %}
         <p>This project is maintained by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a></p>
         {% endif %}
         <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
       </footer>
+
     </div>
+    
     <script src="{{ "/assets/js/scale.fix.js" | relative_url }}"></script>
+  
   </body>
-</html>
+
+  </html>

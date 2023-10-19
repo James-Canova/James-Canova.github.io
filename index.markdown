@@ -4,3 +4,9 @@
 
 layout: default
 ---
+
+
+### This is the right pane 3rd level HEADING (this text is in index.markdown).
+
+This is plain text in a paragraph.
+
